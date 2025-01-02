@@ -1,0 +1,348 @@
+/* Import a pixelated font for a retro look */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Flash Messages */
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.flashes li {
+    background-color: #ffdddd;
+    color: #a94442;
+    padding: 10px;
+    border: 1px solid #a94442;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* Containers */
+.signup-container, .login-container, .profile-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #282a36;
+    color: #f8f8f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.signup-container h2, .login-container h2, .profile-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Forms */
+form input {
+    margin-bottom: 15px;
+}
+
+form button {
+    width: 100%;
+}
+
+/* Profile */
+.profile-container p {
+    margin: 10px 0;
+}
+
+.profile-container h3 {
+    margin-top: 20px;
+}
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    background: linear-gradient(135deg, #1a1a40, #4a4a7c);
+    color: #f8f8f2;
+    text-shadow: 2px 2px #000;
+    transition: background 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: opacity 0.5s ease, background-color 0.3s ease;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline;
+}
+
+.nav-link {
+    color: #f8f8f2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffc857;
+    transform: scale(1.1);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.active-tasks {
+    width: 20%;
+    padding-right: 2rem;
+}
+
+.container {
+    width: 60%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
+    margin-top: 20px;
+}
+
+.container.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    margin: 0.5rem 0;
+    border: 3px solid #ffcc00;
+    border-radius: 5px;
+    background-color: #282a36;
+    color: #f8f8f2;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    background-color: #44475a;
+    transform: scale(1.05);
+    outline: none;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #ffcc00;
+    color: #000;
+    border: 3px solid #000;
+    border-radius: 5px;
+    margin: 0.5rem;
+    text-shadow: 1px 1px #000;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #ffc857;
+}
+
+.progress {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background-color: #76c7c0;
+    height: 100%;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+    animation: progressAnimation 25s linear forwards;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.task-list li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: #44475a;
+    color: #f8f8f2;
+    border: 2px solid #6272a4;
+    text-shadow: 1px 1px #000;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.task-list li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-list li:hover {
+    background: #6272a4;
+}
+
+.task-list li span {
+    font-size: 0.7rem;
+    background: #6272a4;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    color: #f8f8f2;
+}
+
+.input-section {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.task-list ul {
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #f8f8f2;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    transition: color 0.3s;
+}
+
+.delete-btn:hover {
+    color: #ff5555;
+}
+/* Make sure the button stays at the top right of the page */
+.login-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding-top: 50px;
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+  }
+  
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Input and Button Styles */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .placeholder-glow {
+    display: block;
+    width: auto;
+    max-width: 100%;
+  }
+  
+  .placeholder {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    background-color: #d3d3d3;
+  }
+  
+  .btn.placeholder-wave {
+    width: auto;
+    max-width: 100%;
+    background-color: #d3d3d3;
+  }
+  
