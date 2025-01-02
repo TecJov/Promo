@@ -1,3 +1,5 @@
 .env
 .env.*
 users.db
+.db
+.db*
