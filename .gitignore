@@ -2,4 +2,4 @@
 .env.*
 users.db
 .db
-.db*
+*.db
